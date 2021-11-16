@@ -52,6 +52,7 @@ class MainTabController: UITabBarController {
         nav.tabBarItem.image = unselectedImage
         nav.tabBarItem.selectedImage = selectedImage
         nav.navigationBar.tintColor = .black
+        nav.navigationBar.scrollEdgeAppearance = nav.navigationBar.standardAppearance
         return nav
     }
 
