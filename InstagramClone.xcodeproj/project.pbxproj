@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3025305427444622006EDB7D /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025305327444622006EDB7D /* FeedController.swift */; };
+		302530562744462F006EDB7D /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302530552744462F006EDB7D /* SearchController.swift */; };
+		3025305827444640006EDB7D /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025305727444640006EDB7D /* ImageSelectorController.swift */; };
+		3025305A2744464F006EDB7D /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302530592744464F006EDB7D /* NotificationsController.swift */; };
+		3025305C2744466B006EDB7D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025305B2744466B006EDB7D /* ProfileController.swift */; };
 		30C910702742C067006C971B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C9106F2742C067006C971B /* AppDelegate.swift */; };
 		30C910722742C067006C971B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C910712742C067006C971B /* SceneDelegate.swift */; };
 		30C910772742C068006C971B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C910752742C068006C971B /* Main.storyboard */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3025305327444622006EDB7D /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		302530552744462F006EDB7D /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		3025305727444640006EDB7D /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		302530592744464F006EDB7D /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		3025305B2744466B006EDB7D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		30C9106C2742C067006C971B /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C9106F2742C067006C971B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30C910712742C067006C971B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				30C910892742C29C006C971B /* MainTabController.swift */,
+				3025305327444622006EDB7D /* FeedController.swift */,
+				302530552744462F006EDB7D /* SearchController.swift */,
+				3025305727444640006EDB7D /* ImageSelectorController.swift */,
+				302530592744464F006EDB7D /* NotificationsController.swift */,
+				3025305B2744466B006EDB7D /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,8 +202,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				30C910702742C067006C971B /* AppDelegate.swift in Sources */,
+				302530562744462F006EDB7D /* SearchController.swift in Sources */,
 				30C9108A2742C29C006C971B /* MainTabController.swift in Sources */,
+				3025305A2744464F006EDB7D /* NotificationsController.swift in Sources */,
 				30C910722742C067006C971B /* SceneDelegate.swift in Sources */,
+				3025305827444640006EDB7D /* ImageSelectorController.swift in Sources */,
+				3025305427444622006EDB7D /* FeedController.swift in Sources */,
+				3025305C2744466B006EDB7D /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
