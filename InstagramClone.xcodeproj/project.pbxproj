@@ -13,6 +13,7 @@
 		3025305A2744464F006EDB7D /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302530592744464F006EDB7D /* NotificationsController.swift */; };
 		3025305C2744466B006EDB7D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025305B2744466B006EDB7D /* ProfileController.swift */; };
 		3025305E274458B3006EDB7D /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025305D274458B3006EDB7D /* FeedCell.swift */; };
+		30253060274459D0006EDB7D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025305F274459D0006EDB7D /* Extensions.swift */; };
 		30C910702742C067006C971B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C9106F2742C067006C971B /* AppDelegate.swift */; };
 		30C910722742C067006C971B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C910712742C067006C971B /* SceneDelegate.swift */; };
 		30C910772742C068006C971B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C910752742C068006C971B /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		302530592744464F006EDB7D /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		3025305B2744466B006EDB7D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		3025305D274458B3006EDB7D /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		3025305F274459D0006EDB7D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		30C9106C2742C067006C971B /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C9106F2742C067006C971B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30C910712742C067006C971B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		30C910832742C08D006C971B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3025305F274459D0006EDB7D /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				30C9108A2742C29C006C971B /* MainTabController.swift in Sources */,
 				3025305A2744464F006EDB7D /* NotificationsController.swift in Sources */,
 				30C910722742C067006C971B /* SceneDelegate.swift in Sources */,
+				30253060274459D0006EDB7D /* Extensions.swift in Sources */,
 				3025305827444640006EDB7D /* ImageSelectorController.swift in Sources */,
 				3025305427444622006EDB7D /* FeedController.swift in Sources */,
 				3025305C2744466B006EDB7D /* ProfileController.swift in Sources */,
