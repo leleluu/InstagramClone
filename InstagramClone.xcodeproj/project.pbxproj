@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30128F6627457AF80082FAB6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F6527457AF80082FAB6 /* LoginController.swift */; };
+		30128F6827457B140082FAB6 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F6727457B140082FAB6 /* RegistrationController.swift */; };
 		3025305427444622006EDB7D /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025305327444622006EDB7D /* FeedController.swift */; };
 		302530562744462F006EDB7D /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302530552744462F006EDB7D /* SearchController.swift */; };
 		3025305827444640006EDB7D /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3025305727444640006EDB7D /* ImageSelectorController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30128F6527457AF80082FAB6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		30128F6727457B140082FAB6 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		3025305327444622006EDB7D /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		302530552744462F006EDB7D /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		3025305727444640006EDB7D /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
@@ -51,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30128F6427457AC70082FAB6 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				30128F6527457AF80082FAB6 /* LoginController.swift */,
+				30128F6727457B140082FAB6 /* RegistrationController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		30C910632742C067006C971B = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +117,7 @@
 		30C910852742C09F006C971B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				30128F6427457AC70082FAB6 /* Authentication */,
 				30C910892742C29C006C971B /* MainTabController.swift */,
 				3025305327444622006EDB7D /* FeedController.swift */,
 				302530552744462F006EDB7D /* SearchController.swift */,
@@ -207,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30128F6627457AF80082FAB6 /* LoginController.swift in Sources */,
 				30C910702742C067006C971B /* AppDelegate.swift in Sources */,
 				302530562744462F006EDB7D /* SearchController.swift in Sources */,
 				30C9108A2742C29C006C971B /* MainTabController.swift in Sources */,
@@ -216,6 +231,7 @@
 				3025305827444640006EDB7D /* ImageSelectorController.swift in Sources */,
 				3025305427444622006EDB7D /* FeedController.swift in Sources */,
 				3025305C2744466B006EDB7D /* ProfileController.swift in Sources */,
+				30128F6827457B140082FAB6 /* RegistrationController.swift in Sources */,
 				3025305E274458B3006EDB7D /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
