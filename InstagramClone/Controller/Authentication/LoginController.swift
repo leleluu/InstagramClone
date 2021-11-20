@@ -69,11 +69,7 @@ class LoginController: UIViewController {
         } else {
             viewModel.password = sender.text
         }
-
-        loginButton.backgroundColor = viewModel.buttonBackgroundColour
-        loginButton.setTitleColor(viewModel.buttonTitleColour, for: .normal)
-        loginButton.isEnabled = viewModel.formIsValid
-
+        updateForm()
     }
 
     func configureUI() {
@@ -103,4 +99,14 @@ class LoginController: UIViewController {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
+}
+
+// MARK: - FormViewModel
+extension LoginController: FormViewModel {
+    func updateForm() {
+        loginButton.backgroundColor = viewModel.buttonBackgroundColour
+        loginButton.setTitleColor(viewModel.buttonTitleColour, for: .normal)
+        loginButton.isEnabled = viewModel.formIsValid
+    }
+
 }
