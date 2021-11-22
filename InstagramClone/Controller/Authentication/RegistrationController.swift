@@ -64,12 +64,18 @@ class RegistrationController: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         guard let fullname = fullnameTextField.text else { return }
-        guard let username = usernameTextField.text else { return }
+        guard let username = usernameTextField.text?.lowercased() else { return }
         guard let profileImage = self.profileImage else { return }
 
         let credentials = AuthCredentials(email: email, password: password, fullname: fullname, username: username, profileImage: profileImage)
 
-        AuthService.registerUser(withCredintial: credentials)
+        AuthService.registerUser(withCredintial: credentials) { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print("successfylly registered yser with firestore")
+        }
     }
 
     @objc func handleShowLogin() {
