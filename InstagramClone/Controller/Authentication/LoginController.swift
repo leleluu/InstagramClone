@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 
 class LoginController: UIViewController {
     // MARK: - Properties
@@ -19,7 +20,7 @@ class LoginController: UIViewController {
 
     private let passwordTextField: CustomTextField = {
         let tf = CustomTextField(placeholder: "Password")
-//        tf.isSecureTextEntry = true
+        tf.isSecureTextEntry = true
         return tf
     }()
 
@@ -32,6 +33,7 @@ class LoginController: UIViewController {
         button.isEnabled = false
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.addTarget(self, action: #selector(handleShowLogin), for: .touchUpInside)
         return button
     }()
 
@@ -61,6 +63,19 @@ class LoginController: UIViewController {
     @objc func handleShowSignUp() {
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+
+    @objc func handleShowLogin() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+
+        AuthService.logUserIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("Failed to log user in \(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     @objc func textDidChange(sender: UITextField) {

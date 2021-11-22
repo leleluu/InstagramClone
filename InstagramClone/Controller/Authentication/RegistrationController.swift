@@ -61,6 +61,7 @@ class RegistrationController: UIViewController {
 
     @objc func handleShowSignUp() {
 
+//    TODO: strong password issue that happens sometimes
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         guard let fullname = fullnameTextField.text else { return }
@@ -74,7 +75,7 @@ class RegistrationController: UIViewController {
                 print(error.localizedDescription)
                 return
             }
-            print("successfylly registered yser with firestore")
+            self.dismiss(animated: true, completion: nil)
         }
     }
 
