@@ -5,18 +5,32 @@ class MainTabController: UITabBarController {
 
     // MARK: - Lifecycle
 
+    private var user: User? {
+        didSet {
+            guard let user = user else { return }
+            configureViewControllers(withUser: user)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewControllers()
         checkIfUserIsLoggedIn()
+        fetchUser()
     }
 
     // MARK: - API
+
+    func fetchUser() {
+        UserService.fetchUser { user in
+            self.user = user
+        }
+    }
 
     func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {
                 let controller = LoginController()
+                controller.delegate = self
                 let nav = UINavigationController(rootViewController: controller)
                 nav.modalPresentationStyle = .fullScreen
                 self.present(nav, animated: true, completion: nil)
@@ -26,7 +40,7 @@ class MainTabController: UITabBarController {
 
     // MARK: - Helpers
 
-    func configureViewControllers() {
+    func configureViewControllers(withUser user: User) {
         view.backgroundColor = .white
         tabBar.scrollEdgeAppearance = tabBar.standardAppearance
 
@@ -51,11 +65,11 @@ class MainTabController: UITabBarController {
             selectedImage: UIImage(named: "like_selected")!,
             rootViewController: NotificationsController())
 
-        let profileLayout = UICollectionViewFlowLayout()
+        let profileController = ProfileController(user: user)
         let profile = templateNavigationController(
             unselectedImage: UIImage(named: "profile_unselected")!,
             selectedImage: UIImage(named: "profile_selected")!,
-            rootViewController: ProfileController(collectionViewLayout: profileLayout))
+            rootViewController: profileController)
 
         viewControllers = [feed, search, imageSelector, notifications, profile]
         tabBar.tintColor = .black
@@ -72,4 +86,11 @@ class MainTabController: UITabBarController {
         return nav
     }
 
+}
+
+extension MainTabController: AuthenticatonDelegate {
+    func authenticationDidComplete() {
+        fetchUser()
+        self.dismiss(animated: true, completion: nil)
+    }
 }
