@@ -6,12 +6,14 @@ class SearchController: UITableViewController{
 
     // MARK: - Properties
     private var users = [User]()
+    let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         fetchUsers()
+        configureSearchController()
     }
 
     // MARK: - Helpers
@@ -19,6 +21,13 @@ class SearchController: UITableViewController{
         view.backgroundColor = .white
         tableView.register(UserCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 64
+    }
+
+    func configureSearchController() {
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
     }
 
     // MARK: - API
