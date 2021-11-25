@@ -94,7 +94,10 @@ extension ProfileController: ProfileHeaderDelegate {
         if user.isCurrentUser {
 
         } else if user.isFollowed {
-
+            UserService.unfollow(uid: user.uid) { error in
+                self.user.isFollowed = false
+                self.collectionView.reloadData()
+            }
         } else {
             UserService.follow(uid: user.uid) { error in
                 self.user.isFollowed = true
