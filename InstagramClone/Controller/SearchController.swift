@@ -34,7 +34,7 @@ class SearchController: UITableViewController{
 
 // MARK: - UITableviewDataSource
 
-extension SearchController{
+extension SearchController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -42,5 +42,13 @@ extension SearchController{
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! UserCell
         cell.viewModel = UserCellViewModel(user: users[indexPath.row])
         return cell
+    }
+}
+
+// MARK: - UITableviewDelegate
+extension SearchController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = ProfileController(user: users[indexPath.row])
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
