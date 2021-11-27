@@ -1,7 +1,9 @@
 import UIKit
 
 protocol FeedCellDelegate: class {
-    func cell(_cell: FeedCell, wantsToShowCommentsFor post: Post)
+    func cell(_ cell: FeedCell, wantsToShowCommentsFor post: Post)
+
+    func cell(_ cell: FeedCell, didLike post: Post)
 }
 
 class FeedCell: UICollectionViewCell {
@@ -41,10 +43,11 @@ class FeedCell: UICollectionViewCell {
         return iv
     }()
 
-    private lazy var likeButton: UIButton = {
+    lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "like_unselected"), for: .normal)
         button.tintColor = .black
+        button.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         return button
     }()
 
@@ -127,7 +130,13 @@ class FeedCell: UICollectionViewCell {
         // We want to open a vc(commentsvc) but cannot access the nav controller from a view cell so we need to delegate this back to controller using a delegate
         guard let viewModel = viewModel else { return }
 
-        delegate?.cell(_cell: self, wantsToShowCommentsFor: viewModel.post)
+        delegate?.cell(self, wantsToShowCommentsFor: viewModel.post)
+    }
+
+    @objc func didTapLike() {
+        guard let viewModel = viewModel else { return }
+        delegate?.cell(self, didLike: viewModel.post)
+
     }
 
     // MARK: - Helpers
