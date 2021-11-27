@@ -4,6 +4,10 @@ import Firebase
 private let reuseIdentifier = "Cell"
 class FeedController: UICollectionViewController {
 
+    // MARK: - Properties
+
+    private var posts = [Post]()
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -32,6 +36,16 @@ class FeedController: UICollectionViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         navigationItem.title = "Feed"
     }
+
+    // MARK: - API
+
+    func fetchPosts() {
+        PostService.fetchPosts { posts in
+            self.posts = posts
+            self.collectionView.reloadData()
+        }
+    }
+
 }
 
 // MARK: - UICollectionViewDataSource
@@ -39,7 +53,7 @@ class FeedController: UICollectionViewController {
 extension FeedController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return posts.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
