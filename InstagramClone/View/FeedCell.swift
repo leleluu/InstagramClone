@@ -1,6 +1,11 @@
 import UIKit
 
+protocol FeedCellDelegate: class {
+    func cell(_cell: FeedCell, wantsToShowCommentsFor post: Post)
+}
+
 class FeedCell: UICollectionViewCell {
+
     // MARK: - Properties
 
     var viewModel: PostViewModel? {
@@ -8,6 +13,8 @@ class FeedCell: UICollectionViewCell {
             configure()
         }
     }
+
+    weak var delegate: FeedCellDelegate?
 
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
@@ -45,6 +52,7 @@ class FeedCell: UICollectionViewCell {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "comment"), for: .normal)
         button.tintColor = .black
+        button.addTarget(self, action: #selector(didTapComments), for: .touchUpInside)
         return button
     }()
 
@@ -113,6 +121,13 @@ class FeedCell: UICollectionViewCell {
 
     @objc func didTapUserName() {
         print("did tap username")
+    }
+
+    @objc func didTapComments() {
+        // We want to open a vc(commentsvc) but cannot access the nav controller from a view cell so we need to delegate this back to controller using a delegate
+        guard let viewModel = viewModel else { return }
+
+        delegate?.cell(_cell: self, wantsToShowCommentsFor: viewModel.post)
     }
 
     // MARK: - Helpers
