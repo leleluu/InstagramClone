@@ -153,6 +153,8 @@ class FeedCell: UICollectionViewCell {
         userNameButton.setTitle(viewModel.username, for: .normal)
 
         likesLabel.text = viewModel.likesLabelText
+        likeButton.tintColor = viewModel.likesButtonTintColor
+        likeButton.setImage(viewModel.likesButtonImage, for: .normal)
     }
 
     func configureActionButtons() {

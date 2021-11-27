@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 struct PostViewModel {
     var post: Post
@@ -19,6 +20,15 @@ struct PostViewModel {
         } else {
             return "\(post.likes) like"
         }
+    }
+
+    var likesButtonTintColor: UIColor {
+        return post.didLike ? .red : .black
+    }
+
+    var likesButtonImage: UIImage? {
+        let imageName = post.didLike ? "like_selected" : "like_unselected"
+        return UIImage(named: imageName)
     }
 
     init(post: Post) {

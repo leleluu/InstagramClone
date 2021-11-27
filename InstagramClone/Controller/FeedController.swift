@@ -6,7 +6,12 @@ class FeedController: UICollectionViewController {
 
     // MARK: - Properties
 
-    private var posts = [Post]()
+    private var posts = [Post]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+
     var post: Post?
 
     // MARK: - Lifecycle
@@ -15,6 +20,7 @@ class FeedController: UICollectionViewController {
         super.viewDidLoad()
         configureUI()
         fetchPosts()
+        checkIfUserDidLikePosts()
         collectionView.reloadData()
     }
 
@@ -60,7 +66,16 @@ class FeedController: UICollectionViewController {
         PostService.fetchPosts { posts in
             self.posts = posts
             self.collectionView.refreshControl?.endRefreshing()
-            self.collectionView.reloadData()
+        }
+    }
+
+    func checkIfUserDidLikePosts() {
+        self.posts.forEach { post in
+            PostService.checkIfUserDidLikePost(post: post) { didLike in
+                if let index = self.posts.firstIndex(where: { $0.postId == post.postId }) {
+                    self.posts[index].didLike = didLike
+                }
+            }
         }
     }
 
@@ -109,12 +124,15 @@ extension FeedController: FeedCellDelegate {
             PostService.unlikePost(post: post) { error in
                 cell.likeButton.setImage(UIImage(named: "like_unselected"), for: .normal)
                 cell.likeButton.tintColor = .black
+                cell.viewModel?.post.likes = post.likes - 1
+
             }
 
         } else {
             PostService.likePost(post: post) { error in
                 cell.likeButton.setImage(UIImage(named: "like_selected"), for: .normal)
                 cell.likeButton.tintColor = .red
+                cell.viewModel?.post.likes = post.likes + 1
             }
         }
     }
