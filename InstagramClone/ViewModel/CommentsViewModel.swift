@@ -15,4 +15,13 @@ struct CommentsViewModel {
         attributedString.append(NSAttributedString(string: comment.commentText, attributes: [.font: UIFont.systemFont(ofSize: 14)]))
         return attributedString
     }
+
+    func size(forWidth width: CGFloat) -> CGSize {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = comment.commentText
+        label.lineBreakMode = .byWordWrapping
+        label.setWidth(width)
+        return label.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+    }
 }

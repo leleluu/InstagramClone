@@ -31,6 +31,8 @@ class CommentCell: UICollectionViewCell {
 
         addSubview(commentLabel)
         commentLabel.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 8)
+        commentLabel.anchor(right: rightAnchor, paddingRight: 8)
+        commentLabel.numberOfLines = 0
     }
     
     required init?(coder: NSCoder) {
