@@ -43,6 +43,9 @@ class CommentController: UICollectionViewController {
 
         collectionView.backgroundColor = .white
         collectionView.register(CommentCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
+        collectionView.alwaysBounceVertical = true
+        collectionView.keyboardDismissMode = .interactive
     }
 }
 
@@ -50,7 +53,7 @@ class CommentController: UICollectionViewController {
 
 extension CommentController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 2
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
