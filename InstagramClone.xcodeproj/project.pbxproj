@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30043E022753804B005EE6B0 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30043E012753804B005EE6B0 /* NotificationCell.swift */; };
 		30128F6627457AF80082FAB6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F6527457AF80082FAB6 /* LoginController.swift */; };
 		30128F6827457B140082FAB6 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F6727457B140082FAB6 /* RegistrationController.swift */; };
 		30128F6A2745B51E0082FAB6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F692745B51E0082FAB6 /* CustomTextField.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30043E012753804B005EE6B0 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		30128F6527457AF80082FAB6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		30128F6727457B140082FAB6 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		30128F692745B51E0082FAB6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				309DAB62274FFC8D00E98033 /* UserCell.swift */,
 				30F065E127524FBC009F763D /* CommentCell.swift */,
 				30F065E327525C78009F763D /* CommentInputAccessoryView.swift */,
+				30043E012753804B005EE6B0 /* NotificationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				30853CEC274D7FA500D00457 /* Constants.swift in Sources */,
 				3025305C2744466B006EDB7D /* ProfileController.swift in Sources */,
 				30128F6827457B140082FAB6 /* RegistrationController.swift in Sources */,
+				30043E022753804B005EE6B0 /* NotificationCell.swift in Sources */,
 				3025305E274458B3006EDB7D /* FeedCell.swift in Sources */,
 				30F065DE27522460009F763D /* PostViewModel.swift in Sources */,
 				30853CF0274D861500D00457 /* ProfileHeaderViewModel.swift in Sources */,
