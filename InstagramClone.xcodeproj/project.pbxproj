@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		30043E022753804B005EE6B0 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30043E012753804B005EE6B0 /* NotificationCell.swift */; };
 		30043E0427538524005EE6B0 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30043E0327538524005EE6B0 /* Notifications.swift */; };
+		30043E062753882E005EE6B0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30043E052753882E005EE6B0 /* NotificationService.swift */; };
 		30128F6627457AF80082FAB6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F6527457AF80082FAB6 /* LoginController.swift */; };
 		30128F6827457B140082FAB6 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F6727457B140082FAB6 /* RegistrationController.swift */; };
 		30128F6A2745B51E0082FAB6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F692745B51E0082FAB6 /* CustomTextField.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		30043E012753804B005EE6B0 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		30043E0327538524005EE6B0 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		30043E052753882E005EE6B0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		30128F6527457AF80082FAB6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		30128F6727457B140082FAB6 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		30128F692745B51E0082FAB6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				306B2314274C225A0021B579 /* ImageUploader.swift */,
+				30043E052753882E005EE6B0 /* NotificationService.swift */,
 				30F065E527526875009F763D /* CommentService.swift */,
 				306B2316274C22710021B579 /* AuthService.swift */,
 				30853CE9274D7F5800D00457 /* UserService.swift */,
@@ -402,6 +405,7 @@
 				30853CEA274D7F5800D00457 /* UserService.swift in Sources */,
 				3025305427444622006EDB7D /* FeedController.swift in Sources */,
 				30B4FE7327521A0500AD873D /* Post.swift in Sources */,
+				30043E062753882E005EE6B0 /* NotificationService.swift in Sources */,
 				30853CEC274D7FA500D00457 /* Constants.swift in Sources */,
 				3025305C2744466B006EDB7D /* ProfileController.swift in Sources */,
 				30128F6827457B140082FAB6 /* RegistrationController.swift in Sources */,
