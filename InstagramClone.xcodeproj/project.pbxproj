@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30043E022753804B005EE6B0 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30043E012753804B005EE6B0 /* NotificationCell.swift */; };
+		30043E0427538524005EE6B0 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30043E0327538524005EE6B0 /* Notifications.swift */; };
 		30128F6627457AF80082FAB6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F6527457AF80082FAB6 /* LoginController.swift */; };
 		30128F6827457B140082FAB6 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F6727457B140082FAB6 /* RegistrationController.swift */; };
 		30128F6A2745B51E0082FAB6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F692745B51E0082FAB6 /* CustomTextField.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		30043E012753804B005EE6B0 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		30043E0327538524005EE6B0 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		30128F6527457AF80082FAB6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		30128F6727457B140082FAB6 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		30128F692745B51E0082FAB6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				30853CED274D821200D00457 /* User.swift */,
+				30043E0327538524005EE6B0 /* Notifications.swift */,
 				30F065E7275287A9009F763D /* Comment.swift */,
 				309DAB6427500A4100E98033 /* UserCellViewModel.swift */,
 				30B4FE7227521A0500AD873D /* Post.swift */,
@@ -378,6 +381,7 @@
 				30B4FE6D2751714000AD873D /* UploadPostController.swift in Sources */,
 				30128F6627457AF80082FAB6 /* LoginController.swift in Sources */,
 				30F065E427525C78009F763D /* CommentInputAccessoryView.swift in Sources */,
+				30043E0427538524005EE6B0 /* Notifications.swift in Sources */,
 				30F065EA27528CED009F763D /* CommentsViewModel.swift in Sources */,
 				30F065E8275287A9009F763D /* Comment.swift in Sources */,
 				306B2315274C225A0021B579 /* ImageUploader.swift in Sources */,
