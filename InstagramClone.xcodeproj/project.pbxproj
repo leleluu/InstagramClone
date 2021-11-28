@@ -10,6 +10,7 @@
 		30043E022753804B005EE6B0 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30043E012753804B005EE6B0 /* NotificationCell.swift */; };
 		30043E0427538524005EE6B0 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30043E0327538524005EE6B0 /* Notifications.swift */; };
 		30043E062753882E005EE6B0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30043E052753882E005EE6B0 /* NotificationService.swift */; };
+		30043E0827538ED2005EE6B0 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30043E0727538ED2005EE6B0 /* NotificationsViewModel.swift */; };
 		30128F6627457AF80082FAB6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F6527457AF80082FAB6 /* LoginController.swift */; };
 		30128F6827457B140082FAB6 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F6727457B140082FAB6 /* RegistrationController.swift */; };
 		30128F6A2745B51E0082FAB6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30128F692745B51E0082FAB6 /* CustomTextField.swift */; };
@@ -34,7 +35,7 @@
 		309DAB6527500A4100E98033 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DAB6427500A4100E98033 /* UserCellViewModel.swift */; };
 		30B4FE6D2751714000AD873D /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B4FE6C2751714000AD873D /* UploadPostController.swift */; };
 		30B4FE6F2751743300AD873D /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B4FE6E2751743300AD873D /* InputTextView.swift */; };
-		30B4FE712752111100AD873D /* PostUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B4FE702752111100AD873D /* PostUpload.swift */; };
+		30B4FE712752111100AD873D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B4FE702752111100AD873D /* PostService.swift */; };
 		30B4FE7327521A0500AD873D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B4FE7227521A0500AD873D /* Post.swift */; };
 		30C910702742C067006C971B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C9106F2742C067006C971B /* AppDelegate.swift */; };
 		30C910722742C067006C971B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C910712742C067006C971B /* SceneDelegate.swift */; };
@@ -56,6 +57,7 @@
 		30043E012753804B005EE6B0 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		30043E0327538524005EE6B0 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		30043E052753882E005EE6B0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		30043E0727538ED2005EE6B0 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		30128F6527457AF80082FAB6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		30128F6727457B140082FAB6 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		30128F692745B51E0082FAB6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -80,7 +82,7 @@
 		309DAB6427500A4100E98033 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		30B4FE6C2751714000AD873D /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
 		30B4FE6E2751743300AD873D /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
-		30B4FE702752111100AD873D /* PostUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUpload.swift; sourceTree = "<group>"; };
+		30B4FE702752111100AD873D /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		30B4FE7227521A0500AD873D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		30C9106C2742C067006C971B /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C9106F2742C067006C971B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,7 +190,7 @@
 				30F065E527526875009F763D /* CommentService.swift */,
 				306B2316274C22710021B579 /* AuthService.swift */,
 				30853CE9274D7F5800D00457 /* UserService.swift */,
-				30B4FE702752111100AD873D /* PostUpload.swift */,
+				30B4FE702752111100AD873D /* PostService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -216,6 +218,7 @@
 				30853CEF274D861500D00457 /* ProfileHeaderViewModel.swift */,
 				30F065DD27522460009F763D /* PostViewModel.swift */,
 				30F065E927528CED009F763D /* CommentsViewModel.swift */,
+				30043E0727538ED2005EE6B0 /* NotificationsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -396,7 +399,7 @@
 				306B231C274C623A0021B579 /* ProfileHeader.swift in Sources */,
 				30F065E027524DC3009F763D /* CommentController.swift in Sources */,
 				3025305A2744464F006EDB7D /* NotificationsController.swift in Sources */,
-				30B4FE712752111100AD873D /* PostUpload.swift in Sources */,
+				30B4FE712752111100AD873D /* PostService.swift in Sources */,
 				30C910722742C067006C971B /* SceneDelegate.swift in Sources */,
 				309DAB63274FFC8D00E98033 /* UserCell.swift in Sources */,
 				30253060274459D0006EDB7D /* Extensions.swift in Sources */,
@@ -405,6 +408,7 @@
 				30853CEA274D7F5800D00457 /* UserService.swift in Sources */,
 				3025305427444622006EDB7D /* FeedController.swift in Sources */,
 				30B4FE7327521A0500AD873D /* Post.swift in Sources */,
+				30043E0827538ED2005EE6B0 /* NotificationsViewModel.swift in Sources */,
 				30043E062753882E005EE6B0 /* NotificationService.swift in Sources */,
 				30853CEC274D7FA500D00457 /* Constants.swift in Sources */,
 				3025305C2744466B006EDB7D /* ProfileController.swift in Sources */,
