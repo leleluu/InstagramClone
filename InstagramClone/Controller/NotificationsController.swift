@@ -78,11 +78,16 @@ extension NotificationsController {
 
 extension NotificationsController: NotificationCellDelegate {
     func cell(_ cell: NotificationCell, wantsToFollow uid: String) {
-
+        UserService.follow(uid: uid) { _ in
+            cell.viewModel?.notification.userIsFollowed.toggle()
+        }
     }
 
     func cell(_ cell: NotificationCell, wantsToUnfollow uid: String) {
-    
+        UserService.unfollow(uid: uid) { _ in
+            cell.viewModel?.notification.userIsFollowed.toggle()
+        }
+
     }
 
     func cell(_ cell: NotificationCell, wantsToViewPost postId: String) {
