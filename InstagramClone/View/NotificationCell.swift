@@ -20,14 +20,11 @@ class NotificationCell: UITableViewCell {
         }
     }
 
-    private lazy var profileImageView: UIImageView = {
+    private let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.backgroundColor = .lightGray
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
-        iv.isUserInteractionEnabled = true
-        iv.addGestureRecognizer(tap)
         return iv
     }()
 
@@ -67,7 +64,7 @@ class NotificationCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
 
-        contentView.addSubview(profileImageView)
+        addSubview(profileImageView)
         profileImageView.setDimensions(height: 48, width: 48)
         profileImageView.layer.cornerRadius = 48 / 2
         profileImageView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 12)
@@ -92,10 +89,6 @@ class NotificationCell: UITableViewCell {
 
 
     // MARK: - Actions
-
-    @objc func handleProfileImageTapped() {
-
-    }
 
     @objc func handleFollowTapped() {
         guard let viewModel = viewModel else { return }
