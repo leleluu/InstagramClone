@@ -11,6 +11,8 @@ class NotificationsController: UITableViewController {
         }
     }
 
+    private let refresher = UIRefreshControl()
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -47,6 +49,17 @@ class NotificationsController: UITableViewController {
         tableView.register(NotificationCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 80
         tableView.separatorStyle = .none
+
+        refresher.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        tableView.refreshControl = refresher
+    }
+
+    // MARK: - Actions
+
+    @objc func handleRefresh() {
+        notifications.removeAll()
+        fetchNotifications()
+        refresher.endRefreshing()
     }
 
 }
