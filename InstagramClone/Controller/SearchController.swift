@@ -32,6 +32,7 @@ class SearchController: UIViewController, UISearchControllerDelegate {
         configureUI()
         fetchUsers()
         configureSearchController()
+        fetchPosts()
     }
 
     // MARK: - Helpers
@@ -54,6 +55,7 @@ class SearchController: UIViewController, UISearchControllerDelegate {
     func configureSearchController() {
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
+        navigationItem.title = "explore"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
@@ -69,6 +71,12 @@ class SearchController: UIViewController, UISearchControllerDelegate {
         }
     }
 
+    func fetchPosts() {
+        PostService.fetchPosts { posts in
+            self.posts = posts
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 // MARK: - UITableviewDataSource
@@ -130,12 +138,12 @@ extension SearchController: UISearchResultsUpdating {
 
 extension SearchController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return posts.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: postCellIdentifier, for: indexPath) as! ProfileCell
-//        cell.viewModel = PostViewModel(post: posts[indexPath.row])
+        cell.viewModel = PostViewModel(post: posts[indexPath.row])
         return cell
     }
 
