@@ -1,31 +1,52 @@
 import UIKit
 
-class SearchController: UITableViewController{
+class SearchController: UIViewController{
 
     private let reuseIdentifier = "UserCell"
-
+    private let postCellIdentifier = "ProfileCell"
     // MARK: - Properties
+
+    private let tableView = UITableView()
     private var users = [User]()
     private var filteredUsers = [User]()
+    private var posts = [Post]()
     private var inSearchMode: Bool {
         return searchController.isActive && !searchController.searchBar.text!.isEmpty
     }
+
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.delegate = self
+        cv.dataSource = self
+        cv.register(ProfileCell.self, forCellWithReuseIdentifier: postCellIdentifier)
+        cv.backgroundColor = .white
+        return cv
+    }()
 
     let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
+        configureUI()
         fetchUsers()
         configureSearchController()
     }
 
     // MARK: - Helpers
-    func configureTableView() {
+    func configureUI() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.addSubview(tableView)
+        tableView.fillSuperview()
+
         view.backgroundColor = .white
         tableView.register(UserCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 64
+
+        view.addSubview(collectionView)
+        collectionView.fillSuperview()
     }
 
     func configureSearchController() {
@@ -49,11 +70,11 @@ class SearchController: UITableViewController{
 
 // MARK: - UITableviewDataSource
 
-extension SearchController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension SearchController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return inSearchMode ? filteredUsers.count : users.count
     }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! UserCell
         let user = inSearchMode ? filteredUsers[indexPath.row] : users[indexPath.row]
         cell.viewModel = UserCellViewModel(user: user)
@@ -62,8 +83,9 @@ extension SearchController {
 }
 
 // MARK: - UITableviewDelegate
-extension SearchController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+extension SearchController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = inSearchMode ? filteredUsers[indexPath.row] : users[indexPath.row]
         let controller = ProfileController(user: user)
         navigationController?.pushViewController(controller, animated: true)
@@ -79,5 +101,51 @@ extension SearchController: UISearchResultsUpdating {
             $0.username.contains(searchText) || $0.fullname.lowercased().contains(searchText)
         })
         self.tableView.reloadData()
+    }
+}
+
+// MARK: - UICollectionViewDatasource
+
+extension SearchController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 15
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: postCellIdentifier, for: indexPath) as! ProfileCell
+//        cell.viewModel = PostViewModel(post: posts[indexPath.row])
+        return cell
+    }
+
+
+}
+
+
+// MARK: - UICollectionViewDelegate
+
+extension SearchController: UICollectionViewDelegate {
+
+}
+
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension SearchController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (view.frame.width - 2) / 3
+        return CGSize(width: width, height: width)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 240)
     }
 }
