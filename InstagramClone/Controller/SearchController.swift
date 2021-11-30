@@ -154,7 +154,11 @@ extension SearchController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension SearchController: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = FeedController(collectionViewLayout: UICollectionViewFlowLayout())
+        controller.post = posts[indexPath.row]
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 
