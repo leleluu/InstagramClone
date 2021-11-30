@@ -1,6 +1,6 @@
 import UIKit
 
-class SearchController: UIViewController{
+class SearchController: UIViewController, UISearchControllerDelegate {
 
     private let reuseIdentifier = "UserCell"
     private let postCellIdentifier = "ProfileCell"
@@ -44,6 +44,8 @@ class SearchController: UIViewController{
         view.backgroundColor = .white
         tableView.register(UserCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 64
+        tableView.isHidden = true
+
 
         view.addSubview(collectionView)
         collectionView.fillSuperview()
@@ -51,6 +53,7 @@ class SearchController: UIViewController{
 
     func configureSearchController() {
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
@@ -89,6 +92,25 @@ extension SearchController: UITableViewDelegate {
         let user = inSearchMode ? filteredUsers[indexPath.row] : users[indexPath.row]
         let controller = ProfileController(user: user)
         navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension SearchController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+        collectionView.isHidden = true
+        tableView.isHidden = false
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.showsCancelButton = false
+        searchBar.text = nil
+
+        collectionView.isHidden = false
+        tableView.isHidden = true
     }
 }
 
