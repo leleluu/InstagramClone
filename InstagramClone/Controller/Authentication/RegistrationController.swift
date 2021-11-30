@@ -1,6 +1,7 @@
 import UIKit
 
 class RegistrationController: UIViewController {
+    
     // MARK: - Properties
 
     private var viewModel = RegistrationViewModel()

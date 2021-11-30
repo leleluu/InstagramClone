@@ -27,6 +27,7 @@
 		306B2317274C22710021B579 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B2316274C22710021B579 /* AuthService.swift */; };
 		306B2319274C62230021B579 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B2318274C62230021B579 /* ProfileCell.swift */; };
 		306B231C274C623A0021B579 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B231B274C623A0021B579 /* ProfileHeader.swift */; };
+		307CE9F327567C100067ED5E /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307CE9F227567C100067ED5E /* ResetPasswordController.swift */; };
 		30853CEA274D7F5800D00457 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30853CE9274D7F5800D00457 /* UserService.swift */; };
 		30853CEC274D7FA500D00457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30853CEB274D7FA500D00457 /* Constants.swift */; };
 		30853CEE274D821200D00457 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30853CED274D821200D00457 /* User.swift */; };
@@ -74,6 +75,7 @@
 		306B2316274C22710021B579 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		306B2318274C62230021B579 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		306B231B274C623A0021B579 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		307CE9F227567C100067ED5E /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		30853CE9274D7F5800D00457 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		30853CEB274D7FA500D00457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		30853CED274D821200D00457 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				30128F6527457AF80082FAB6 /* LoginController.swift */,
 				30128F6727457B140082FAB6 /* RegistrationController.swift */,
+				307CE9F227567C100067ED5E /* ResetPasswordController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				30F065E027524DC3009F763D /* CommentController.swift in Sources */,
 				3025305A2744464F006EDB7D /* NotificationsController.swift in Sources */,
 				30B4FE712752111100AD873D /* PostService.swift in Sources */,
+				307CE9F327567C100067ED5E /* ResetPasswordController.swift in Sources */,
 				30C910722742C067006C971B /* SceneDelegate.swift in Sources */,
 				309DAB63274FFC8D00E98033 /* UserCell.swift in Sources */,
 				30253060274459D0006EDB7D /* Extensions.swift in Sources */,
