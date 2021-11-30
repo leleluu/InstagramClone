@@ -19,6 +19,7 @@ struct NotificationsViewModel {
         formatter.unitsStyle = .abbreviated
         return formatter.string(from: notification.timestamp.dateValue(), to: Date())
     }
+
     var notificationMessage: NSAttributedString {
         let username = notification.username
         let message = notification.type.notificationMessage
