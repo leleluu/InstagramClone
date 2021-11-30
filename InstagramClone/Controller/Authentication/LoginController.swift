@@ -129,6 +129,7 @@ class LoginController: UIViewController {
 }
 
 // MARK: - FormViewModel
+
 extension LoginController: FormViewModel {
     func updateForm() {
         loginButton.backgroundColor = viewModel.buttonBackgroundColour
