@@ -1,4 +1,4 @@
-# Instagram Clone 📷
+# Instagram Clone
 An Instagram clone I created following a [Udemy course](https://www.udemy.com/course/instagram-firestore-app-clone-swift-5-ios-14-mvvm).  
 
 **Things I learned** 📚
